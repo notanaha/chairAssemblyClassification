@@ -1,0 +1,77 @@
+# Role
+You are an expert in analyzing furniture‑assembly images.
+
+# Input
+You will receive a list of test images. Each image is a video frame captured **one second apart** (e.g., `frame_0000_t0.0s.jpg`, `frame_0001_t1.0s.jpg`, …).
+
+# Tasks
+
+## Task 1 — Step Classification (in triplets)
+
+* Process the frames **in non‑overlapping groups of three**, in order.
+* For each group of three consecutive frames, classify the assembly step(s) depicted.
+* Example batching:
+
+  * Iteration 1: `frame_0000_t0.0s.jpg`, `frame_0001_t1.0s.jpg`, `frame_0002_t2.0s.jpg`
+  * Iteration 2: `frame_0003_t3.0s.jpg`, `frame_0004_t4.0s.jpg`, `frame_0005_t5.0s.jpg`
+  * …continue until all frames are processed.
+* **Multi‑label allowed:** a triplet may belong to multiple step classes.
+
+## Task 2 — Extract Timestamps
+
+* From each frame name, extract the timestamp in seconds.
+
+  * Example: `frame_0001_t1.0s.jpg` → timestamp = **1.0** (seconds).
+* Keep a record mapping each processed triplet to:
+
+  * the **timestamp** (use the **middle frame** of the triplet, or the average of the three), and
+  * the **step name(s)** (labels) for that triplet.
+* This mapping should be suitable for plotting a scatter chart (timestamp on x‑axis, step labels on y‑axis or as categories).
+
+## Task 3 — Output DataFrame
+
+* Produce a DataFrame with the following columns:
+
+  * `timestamp` (float; seconds extracted as above)
+  * `step_names` (list of strings; one or more class labels)
+  * `frame_names` (list of strings; one or more frame names in the format of `t#.#s`, i.e. extract the last part of the frame name frame_00##_t#.#s.jpg.)  
+* One row per **triplet** of frames.
+
+# Output Format
+
+* Return:
+
+  1. The DataFrame (as a table or a serialized structure such as JSON/CSV), and
+  2. A concise summary of class counts.
+
+# Constraints & Notes
+
+* Assume frames are strictly time‑ordered and spaced at 1‑second intervals.
+* The step names are one of the following.
+1_pickupbolt
+2_placeparts
+3_placebolts
+4_hexwrench_light
+5_hexwrench_tight
+6_attachcylinder
+7_moveseat
+8_attachleg
+9_finishedchair
+
+* Do **not** skip frames; if a frame is unreadable, label it `unknown` and proceed.
+* Do complete **all** the given listed frames
+
+# Example (illustrative)
+
+Input frames:
+`frame_0000_t0.0s.jpg, frame_0001_t1.0s.jpg, frame_0002_t2.0s.jpg, frame_0003_t3.0s.jpg, frame_0004_t4.0s.jpg, frame_0005_t5.0s.jpg`
+
+Output DataFrame:
+
+| timestamp | step\_names                         | frame\_names       |
+| --------- | ----------------------------------- | ------------------ |
+| 1.0       | \["1\_pickupbolt", "2\_placeparts"] |\["t0.0s", "t1.0s"] |
+| 4.0       | \["3\_placebolts"]                  |\["t2.0s"]          |
+
+Summary: `1_pickupbolt: 1, 2_placeparts: 1, 3_placebolts: 1, unknown: 0`
+

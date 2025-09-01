@@ -1,0 +1,27 @@
+The chair assembly process consists of 9 steps:
+
+1_pickupbolt: Pick up 4 bolts from a box
+2_placeparts: Place the base plate onto the seat cushion
+3_placebolts: Place 4 bolts onto the base plate
+4_hexwrench_light: Lightly screw the bolts using a hex wrench
+5_hexwrench_tight: Firmly tighten the bolts using a hex wrench
+6_attachcylinder: Attach a cylinder to the base plate
+7_moveseat: Move the cushion with the base plate into the position for leg attachment
+8_attachleg: Attach a leg on the top of the cylinder
+9_finishedchair: Move the assembled chair
+
+## Your task
+Your task is to classify the images provided later and determine whether they fall under Step 6: 6_attachcylinder.
+
+You were given images that were examples of the chair assembly process. 
+All the images except the last image, are the samples that belong to step 6_attachcylinder.
+## sample1 — sample4 : A series of frames where a persopn is inserting the gas-lift cylinder into the base plate’s socket to mount it.
+In sample1, I drew a red boundary box for you to highlight the gas-lift cylinder in the person's hand.
+In sample4, I also drew a red boundary box for you to highlight the gas-lift cylinder which was almost set onto the base plate.
+
+For your reference, the last image is the sample image that belongs to step 4_hexwrench_light.
+## sample5 : Lightly screws the bolts using a hex wrench. Gripping the long arm of the hex wrench with both hands—one hand near the bolt head for precise control, the other farther out for leverage—and applies gentle, controlled clockwise twists to lightly thread (or pause) the bolt without pressing on the cushion. In this step, both hands stay on the wrench shaft.
+In sample5, the gas-lift cylinder is left on the table, and the person is not interacting with it at this moment.
+
+## Note
+When a person extends his arm to pick up a cylinder from the table should be classified as 6_attachcylinder.

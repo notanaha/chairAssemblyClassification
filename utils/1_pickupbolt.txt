@@ -1,0 +1,18 @@
+The chair assembly process consists of 9 steps:
+
+1_pickupbolt: Pick up 4 bolts from a box
+2_placeparts: Place the base plate onto the seat cushion
+3_placebolts: Place 4 bolts onto the base plate
+4_hexwrench_light: Lightly screw the bolts using a hex wrench
+5_hexwrench_tight: Firmly tighten the bolts using a hex wrench
+6_attachcylinder: Attach a cylinder to the base plate
+7_moveseat: Move the cushion with the base plate into the position for leg attachment
+8_attachleg: Attach a leg on the top of the cylinder
+9_finishedchair: Move the assembled chair
+
+## Your task
+Your task is to classify the images provided later and determine whether they fall under Step 1: 1_pickupbolt.
+
+You were given images that were examples of the chair assembly process.  
+All those samples belong to step 1_pickupbolt.
+## sample1 — sample4 : A series of frames where a persopn is picking the required bolts from the parts box to fasten the base plate to the seat cushion.

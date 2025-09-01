@@ -1,0 +1,24 @@
+# Python cache directories (all subdirectories)
+__pycache__/
+**/__pycache__/
+
+# Data and output directories
+data/
+output/
+output2/
+
+# Zip files (all subdirectories)
+*.zip
+**/*.zip
+
+# Environment file
+.env
+
+# Other temporary files
+test.md
+step_analysis_results.csv
+step_analysis_summary.txt
+
+# Some working scripts
+1_measureElapsedTimeAgent.ipynb
+1_measureElapsedTimeAgent.py

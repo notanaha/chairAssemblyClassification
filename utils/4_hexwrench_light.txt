@@ -1,0 +1,29 @@
+The chair assembly process consists of 9 steps:
+
+1_pickupbolt: Pick up 4 bolts from a box
+2_placeparts: Place the base plate onto the seat cushion
+3_placebolts: Place 4 bolts onto the base plate
+4_hexwrench_light: Lightly screw the bolts using a hex wrench
+5_hexwrench_tight: Firmly tighten the bolts using a hex wrench
+6_attachcylinder: Attach a cylinder to the base plate
+7_moveseat: Move the cushion with the base plate into the position for leg attachment
+8_attachleg: Attach a leg on the top of the cylinder
+9_finishedchair: Move the assembled chair
+
+## Your task
+Your task is to classify the images provided later and determine whether they fall under Step 4: 4_hexwrench_light.
+
+You were given images that were examples of the chair assembly process. 
+All the images except the last image, are the samples that belong to step 4_hexwrench_light.
+## sample1 — sample6 : In these frames, a person lightly screws the bolts using a hex wrench, holding the long arm of the hex wrench with both hands applying gentle, controlled clockwise twists to lightly thread (or pause) the bolt without pressing on the cushion. In this step, both hands stay on the wrench shaft.
+In sample1, I drew a red circle for you to see where your attention should focus on. There is a case where the hex wrench may be hidden in the hand and not visible.
+In Sample2, I drew blue and yellow bounding boxes. The blue box highlights the chair cushion, while the yellow box highlights the parts box.
+
+For your reference, the last image is the sample image that belongs to step 5_hexwrench_tight.
+## sample7 : Firmly tighten the bolts using a hex wrench. One hand wraps around the long end of the hex wrench and turns it in a firm clockwise twist to tighten the bolt. Simultaneously, another hand is on the cushion beside the bolt.
+
+## Note
+Conclude that the given images are classified as the step "4_hexwrench_light" only the following statements are all true.
+- a person lightly screws the bolts using a hex wrench.
+- both hands stay on the wrench shaft without pressing on the cushion
+If both hands are apart from each other, it's not 4_hexwrench_light, but rather 5_hexwrench_tight.

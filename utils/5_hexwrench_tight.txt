@@ -1,0 +1,31 @@
+The chair assembly process consists of 9 steps:
+
+1_pickupbolt: Pick up 4 bolts from a box
+2_placeparts: Place the base plate onto the seat cushion
+3_placebolts: Place 4 bolts onto the base plate
+4_hexwrench_light: Lightly screw the bolts using a hex wrench
+5_hexwrench_tight: Firmly tighten the bolts using a hex wrench
+6_attachcylinder: Attach a cylinder to the base plate
+7_moveseat: Move the cushion with the base plate into the position for leg attachment
+8_attachleg: Attach a leg on the top of the cylinder
+9_finishedchair: Move the assembled chair
+
+## Your task
+Your task is to classify the images provided later and determine whether they fall under Step 5: 5_hexwrench_tight.
+
+You were given images that were examples of the chair assembly process.  
+All the images except the last image, are the samples that belong to step 5_hexwrench_tight.
+## sample1 — sample6 : A series of frames where a person firmly tighten the bolts using a hex wrench. One hand wraps around the long end of the hex wrench and turns it in a firm clockwise twist to tighten the bolt. Simultaneously, another hand is on the cushion beside the bolt.
+In sample1, I drew a red circle for you to see that one hand turns a hex wrench to in firm clockwise twist to tighten the bolt. There is a case where the hex wrench may be hidden in the hand and not visible.
+In sample2, I drew a blue circle to see another hand is on the cushion beside the bolt. 
+In Sample3, I drew blue and yellow bounding boxes. The blue box highlights the chair cushion, while the yellow box highlights the parts box.
+
+
+For your reference, the last image is the sample image that belongs to step 4_hexwrench_light.
+## sample7 : Lightly screws the bolts using a hex wrench. Gripping the long arm of the hex wrench with both hands—one hand near the bolt head for precise control, the other farther out for leverage—and applies gentle, controlled clockwise twists to lightly thread (or pause) the bolt without pressing on the cushion. In this step, both hands stay on the wrench shaft.
+
+## Note
+Conclude that the given images are classified as the step "5_hexwrench_tight" only the following statements are all true.
+- One hand turns a hex wrench to tighten the bolt.
+- Another hand is on the cushion.
+
